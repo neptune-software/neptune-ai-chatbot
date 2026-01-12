@@ -1,6 +1,6 @@
 {
   "name": "@neptune-software/neptune-ai-chatbot",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": false,
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
