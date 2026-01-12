@@ -1271,7 +1271,7 @@ function AnalyticsPanel({
 // app/components/chat-content.tsx
 import { Fragment as Fragment2, jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
 var ChatInput = lazy(() => import("./chat-input-ZAFYBUO7.mjs"));
-var DynamicChatMessage = lazy(() => import("./chat-message-RBCHNC5A.mjs"));
+var DynamicChatMessage = lazy(() => import("./chat-message-TPDSUDYH.mjs"));
 var SCROLL_BOTTOM_THRESHOLD = 50;
 function ChatContent({
   conversation,
@@ -1283,7 +1283,7 @@ function ChatContent({
   messageBubbleColor,
   accentColor,
   scrollButtonColor = "#6366F1",
-  streamingText = "NAIA is working on it...",
+  streamingText = "Naia is working on it...",
   streamingTextColor = "#2563EB",
   welcomeMessagePrimary = "How can I help you today?",
   welcomeMessageSecondary = "Feel free to ask any question you like \u2014 just be precise, as if you're speaking to a real person.",
@@ -2185,7 +2185,7 @@ function NeptuneChatBot({
   accentColorDark = "#A88CFA",
   scrollButtonColor = "#6366F1",
   scrollButtonColorDark = "#818CF8",
-  streamingText = "NAIA is working on it...",
+  streamingText = "Naia is working on it...",
   streamingTextColor = "#2563EB",
   streamingTextColorDark = "#60A5FA",
   welcomeMessagePrimary = "How can I help you today?",

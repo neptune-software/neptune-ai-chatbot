@@ -78,7 +78,7 @@ interface NeptuneChatBotProps {
     scrollButtonColorDark?: string;
     /**
      * Text displayed while the AI is generating a response
-     * @default "NAIA is working on it..."
+     * @default "Naia is working on it..."
      */
     streamingText?: string;
     /**
