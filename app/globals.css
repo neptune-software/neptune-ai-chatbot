@@ -1,0 +1,398 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInBlur {
+    from {
+        opacity: 0;
+        filter: blur(4px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+@keyframes vapor-reveal {
+    0% {
+        opacity: 0.3;
+        filter: blur(3px);
+        transform: translateY(1px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateY(0);
+    }
+}
+
+/* Granular Chunk Animation for streaming text */
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(4px);
+        background-color: rgba(59, 130, 246, 0.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        background-color: transparent;
+    }
+}
+
+.animate-appear {
+    animation: appear 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    display: inline-block;
+}
+
+/* Cursor blinking effect for streaming */
+.cursor-blink::after {
+    content: '▋';
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.streaming-vapor > div > *:last-child {
+    animation: vapor-reveal 0.3s ease-out forwards;
+}
+
+.streaming-vapor > div > * {
+    animation: none !important;
+}
+
+/* Override prose paragraph margins to remove gaps in messages */
+.prose p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.streaming-vapor > div > *:last-child {
+    animation: vapor-reveal 0.3s ease-out forwards !important;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes inputSlideToBottom {
+    0% {
+        align-items: center;
+    }
+    100% {
+        align-items: flex-end;
+        padding-bottom: 1.5rem;
+    }
+}
+
+.chat-input-transition {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chat-input-animating {
+    animation: slideToBottom 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    z-index: 1000;
+    position: relative;
+}
+
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-rgb: 248, 248, 248;
+    --naia-primary: #a88cfa;
+    --bg-tertiary: #a88cfa;
+}
+
+/* Explicit light mode styles */
+:root:not(.dark) {
+    --foreground-rgb: 0, 0, 0;
+    --background-rgb: 248, 248, 248;
+}
+
+/* Light mode component overrides */
+:root:not(.dark) .bg-gray-900 {
+    background-color: #ffffff !important;
+}
+
+:root:not(.dark) .text-gray-100 {
+    color: #374151 !important;
+}
+
+:root:not(.dark) .text-gray-200 {
+    color: #6b7280 !important;
+}
+
+:root:not(.dark) .border-gray-700 {
+    border-color: #d1d5db !important;
+}
+
+:root:not(.dark) .bg-gray-800 {
+    background-color: #f9f9f9 !important;
+}
+
+:root:not(.dark) .bg-gray-700 {
+    background-color: #e5e7eb !important;
+}
+
+/* Force light mode for specific dark mode backgrounds */
+:root:not(.dark) [class*="bg-[#171717]"] {
+    background-color: #f9f9f9 !important;
+}
+
+:root:not(.dark) [class*="dark:bg-gray-900"] {
+    background-color: #ffffff !important;
+}
+
+:root:not(.dark) [class*="dark:bg-[#171717]"] {
+    background-color: #f9f9f9 !important;
+}
+
+/* Override any hardcoded dark backgrounds */
+:root:not(.dark) [style*="background-color: #171717"] {
+    background-color: #f9f9f9 !important;
+}
+
+:root:not(.dark) [style*="background-color: #212121"] {
+    background-color: #ffffff !important;
+}
+
+/* Comprehensive light mode reset */
+:root:not(.dark) .bg-gray-900,
+:root:not(.dark) [class*="bg-gray-900"] {
+    background-color: #ffffff !important;
+}
+
+:root:not(.dark) .bg-gray-800,
+:root:not(.dark) [class*="bg-gray-800"] {
+    background-color: #f4f4f4 !important;
+}
+
+:root:not(.dark) .text-gray-100,
+:root:not(.dark) [class*="text-gray-100"] {
+    color: #1f2937 !important;
+}
+
+:root:not(.dark) .text-gray-200,
+:root:not(.dark) [class*="text-gray-200"] {
+    color: #374151 !important;
+}
+
+/* Conversation item light mode overrides */
+:root:not(.dark) [class*="dark:bg-[#232323]"] {
+    background-color: #e5e7eb !important; /* Light gray for selected */
+}
+
+:root:not(.dark) [class*="dark:hover:bg-[#1a1a1a]"]:hover {
+    background-color: #f3f4f6 !important; /* Lighter gray for hover */
+}
+
+/* Additional conversation hover states */
+:root:not(.dark) .hover\:bg-gray-100:hover,
+:root:not(.dark) [class*="hover:bg-gray-100"]:hover {
+    background-color: #f3f4f6 !important;
+}
+
+/* Light mode border color overrides */
+:root:not(.dark) .border-gray-700,
+:root:not(.dark) [class*="border-gray-700"],
+:root:not(.dark) .dark\:border-gray-700 {
+    border-color: #d1d5db !important; /* Light gray border */
+}
+
+:root:not(.dark) .border-gray-200,
+:root:not(.dark) [class*="border-gray-200"] {
+    border-color: #e5e7eb !important;
+}
+
+.text-naia-primary {
+    color: var(--naia-primary) !important;
+}
+
+.bg-naia-200 {
+    background-color: rgba(168, 140, 250, 0.2) !important;
+}
+
+.dark .bg-naia-200 {
+    background-color: rgba(168, 140, 250, 0.3) !important;
+}
+
+.hover\:bg-naia-hover:hover {
+    background-color: rgba(168, 140, 250, 0.2) !important;
+}
+
+.dark .hover\:bg-naia-hover:hover {
+    background-color: rgba(168, 140, 250, 0.3) !important;
+}
+
+:root:not(.dark) .border-gray-600,
+:root:not(.dark) [class*="border-gray-600"] {
+    border-color: #d1d5db !important;
+}
+
+/* Override any media query dark mode borders */
+@media (prefers-color-scheme: dark) {
+    :root:not(.dark) .dark\:border-gray-700 {
+        border-color: #d1d5db !important;
+    }
+
+    :root:not(.dark) .dark\:border-gray-600 {
+        border-color: #d1d5db !important;
+    }
+
+    :root:not(.dark) .dark\:bg-gray-700 {
+        background-color: #f3f4f6 !important; /* Light gray background */
+    }
+
+    :root:not(.dark) .dark\:bg-gray-800 {
+        background-color: #f4f4f4 !important; /* Even lighter background */
+    }
+
+    :root:not(.dark) .dark\:hover\:bg-gray-700:hover {
+        background-color: #e5e7eb !important; /* Light hover background */
+    }
+}
+
+.dark {
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 33, 33, 33;
+    --bg-primary: #212121;
+    --bg-secondary: #303030;
+    --bg-quaternary: #171717;
+    color-scheme: dark;
+}
+
+body {
+    color: rgb(var(--foreground-rgb));
+    background-color: rgb(var(--background-rgb));
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Explicitly set colors for specific components that might not be picking up dark mode properly */
+.dark .bg-white {
+    background-color: var(--bg-primary);
+}
+
+.dark .bg-gray-100 {
+    background-color: var(--bg-secondary);
+}
+
+.dark .bg-gray-200 {
+    background-color: var(--bg-tertiary);
+}
+
+.dark .bg-gray-900 {
+    background-color: var(--bg-quaternary);
+}
+
+/* Specific override for chat input form */
+form.chat-input {
+    background-color: white !important;
+    border-color: #a88cfa;
+}
+
+.dark form.chat-input {
+    background-color: var(--bg-secondary) !important;
+}
+
+.dark .text-gray-800 {
+    color: #efefef;
+}
+
+.dark .text-gray-500 {
+    color: #a0a0a0;
+}
+
+.dark .border-gray-200 {
+    border-color: var(--bg-tertiary);
+}
+
+.dark .hover\:bg-gray-300 {
+    &:hover {
+        @media (hover: hover) {
+            background-color: var(--bg-tertiary);
+        }
+    }
+}
+
+.dark .enabled\:hover\:bg-gray-300:enabled:hover {
+    background-color: var(--bg-tertiary) !important;
+}
+
+/* Fix for sidebar background in dark mode */
+.dark [class*="bg-[#f9f9f9]"] {
+    background-color: #171717 !important;
+}
+
+.dark [class*="bg-[#e9e9e980]"] {
+    background-color: var(--bg-secondary) !important;
+}
+
+/* Specific styling for conversation items */
+.dark [class*="dark:bg-[#232323]"] {
+    background-color: #232323 !important;
+}
+
+.dark [class*="dark:hover:bg-[#2f2f2f]"]:hover {
+    background-color: #2f2f2f !important;
+}
+
+/* Override media query dark mode for explicit light theme selection */
+@media (prefers-color-scheme: dark) {
+    :root:not(.dark) [class*="dark:bg-[#303030]"] {
+        background-color: #f4f4f4 !important;
+    }
+
+    :root:not(.dark) [class*="dark:hover:bg-[#232323]"]:hover {
+        background-color: #e5e7eb !important;
+    }
+}
+
+.chat-message-background {
+    background-color: rgba(168, 140, 250, 0.2) !important;
+}
+
+.conversation-item-background:hover {
+    background-color: #e5e7eb !important;
+}
+
+.dark .chat-message-background {
+    background-color: rgba(168, 140, 250, 0.3) !important;
+}
+
+.dark .conversation-item-background:hover {
+    background-color: #232323 !important;
+}
+
+.rounded-tl-lg {
+  border-top-left-radius: 0.5rem;
+}
+
+.rounded-tr-lg {
+  border-top-right-radius: 0.5rem;
+}
+
+.rounded-br-lg {
+  border-bottom-right-radius: 0.5rem;
+}
+
+.rounded-bl-lg {
+  border-bottom-left-radius: 0.5rem;
+}
