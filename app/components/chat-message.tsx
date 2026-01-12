@@ -387,7 +387,7 @@ export default function ChatMessage({
     theme,
     onAnalyticOpen,
     messageBubbleColor = "#E5E3F8",
-    streamingText = "NAIA is working on it...",
+    streamingText = "Naia is working on it...",
     streamingTextColor = "#2563EB",
     vectorColor,
     vectorColorDark,

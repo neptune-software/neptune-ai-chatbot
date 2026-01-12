@@ -117,7 +117,7 @@ export interface NeptuneChatBotProps {
 
     /**
      * Text displayed while the AI is generating a response
-     * @default "NAIA is working on it..."
+     * @default "Naia is working on it..."
      */
     streamingText?: string;
 
@@ -286,7 +286,7 @@ export function NeptuneChatBot({
     accentColorDark = "#A88CFA",
     scrollButtonColor = "#6366F1",
     scrollButtonColorDark = "#818CF8",
-    streamingText = "NAIA is working on it...",
+    streamingText = "Naia is working on it...",
     streamingTextColor = "#2563EB",
     streamingTextColorDark = "#60A5FA",
     welcomeMessagePrimary = "How can I help you today?",

@@ -8,6 +8,7 @@ First, configure your `.npmrc` file in your project root to access GitHub Packag
 
 ```bash
 @neptune-software:registry=https://npm.pkg.github.com/
+//npm.pkg.github.com/:_authToken=GITHUB_TOKEN
 ```
 
 Then install the package:
@@ -68,7 +69,7 @@ All customization options are available through props with full TypeScript suppo
 | `accentColorDark` | `string` | `"#A88CFA"` | Accent color for buttons and interactive elements (dark mode) |
 | `scrollButtonColor` | `string` | `"#6366F1"` | Color for the scroll-to-bottom button (light mode) |
 | `scrollButtonColorDark` | `string` | `"#818CF8"` | Color for the scroll-to-bottom button (dark mode) |
-| `streamingText` | `string` | `"NAIA is working on it..."` | Text displayed while AI is generating a response |
+| `streamingText` | `string` | `Naia is working on it..."` | Text displayed while AI is generating a response |
 | `streamingTextColor` | `string` | `"#2563EB"` | Color of the streaming indicator text (light mode) |
 | `streamingTextColorDark` | `string` | `"#818CF8"` | Color of the streaming indicator text (dark mode) |
 | `welcomeMessagePrimary` | `string` | `"Hi there!"` | Primary welcome message on the initial screen |

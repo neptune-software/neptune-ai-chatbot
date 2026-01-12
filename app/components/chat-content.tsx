@@ -78,7 +78,7 @@ export default function ChatContent({
     messageBubbleColor,
     accentColor,
     scrollButtonColor = "#6366F1",
-    streamingText = "NAIA is working on it...",
+    streamingText = "Naia is working on it...",
     streamingTextColor = "#2563EB",
     welcomeMessagePrimary = "How can I help you today?",
     welcomeMessageSecondary = "Feel free to ask any question you like — just be precise, as if you're speaking to a real person.",
