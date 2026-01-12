@@ -1,6 +1,6 @@
 # Neptune AI Chatbot Component
 
-A React component for integrating Neptune AI chat capabilities into your application.
+A React component for integrating a chat bot into your webapp.
 
 ## Installation
 
